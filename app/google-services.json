@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "475943428048",
+    "project_id": "buildathon-e181d",
+    "storage_bucket": "buildathon-e181d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475943428048:android:588665177c374068be23d5",
+        "android_client_info": {
+          "package_name": "com.example.buildathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475943428048-gq83ghjgeqnb2fok1o3thsr34lmj1ieu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnchAV1KQQBisyWF8PEUuY8ZLIE78Bq6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475943428048-gq83ghjgeqnb2fok1o3thsr34lmj1ieu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

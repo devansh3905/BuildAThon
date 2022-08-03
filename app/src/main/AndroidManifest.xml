@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.buildathon">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_banner"
+        android:label="Roll-Call Marker"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_banner_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BuildAThon">
+        <activity android:name=".timePickerNotify"></activity>
+        <activity android:name=".timetableAdding" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ScannerfacTry1" />
+        <activity android:name=".createSession" />
+        <activity android:name=".stuCourse" />
+        <activity android:name=".qrGeneMain" />
+        <activity android:name=".studentTry" />
+        <activity android:name=".scannerFac" />
+        <activity android:name=".createQR" />
+        <activity android:name=".facultyMain" />
+        <activity android:name=".resetPass" />
+        <activity android:name=".settingAll" />
+        <activity android:name=".addTeach" />
+        <activity android:name=".AddStudent" />
+        <activity android:name=".StudentAddList" />
+        <activity android:name=".admin1" />
+        <activity
+            android:name=".startTitle"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".AlarmReceiver"/>
+    </application>
+
+</manifest>
