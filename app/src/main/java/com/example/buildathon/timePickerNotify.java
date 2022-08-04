@@ -78,7 +78,7 @@ public class timePickerNotify extends AppCompatActivity {
         pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
         if (swtch.isChecked()){
-            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_FIFTEEN_MINUTES,pendingIntent);
+            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
             Toast.makeText(this, "Class Scheduled Successfully, will be repeated tomorrow.", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Class Scheduled Successfully", Toast.LENGTH_SHORT).show();
