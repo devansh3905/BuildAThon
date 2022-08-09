@@ -73,12 +73,12 @@ public class timePickerNotify extends AppCompatActivity {
     }
 
     private void setAlarm() {
-    alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,AlarmReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
         if (swtch.isChecked()){
-            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_FIFTEEN_MINUTES,pendingIntent);
+            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
             Toast.makeText(this, "Class Scheduled Successfully, will be repeated tomorrow.", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Class Scheduled Successfully", Toast.LENGTH_SHORT).show();
@@ -99,7 +99,7 @@ public class timePickerNotify extends AppCompatActivity {
         picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (picker.getHour()>12){
+                if (picker.getHour()>=12){
                     txtviu.setText((picker.getHour()-12)+":"+picker.getMinute()+" PM");
                 }
                 else{
@@ -117,7 +117,7 @@ public class timePickerNotify extends AppCompatActivity {
 
     private void createNotificationChannel() {
 
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             CharSequence name = "NotificationChannel";
             String description = "Channel for Notification";
             int importance = NotificationManager.IMPORTANCE_HIGH;

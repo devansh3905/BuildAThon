@@ -45,6 +45,7 @@ public class ScannerfacTry1 extends AppCompatActivity implements ZXingScannerVie
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                         scannerView.startCamera();
+                        scannerView.setAutoFocus(true);
                     }
 
                     @Override
@@ -59,11 +60,14 @@ public class ScannerfacTry1 extends AppCompatActivity implements ZXingScannerVie
                 }).check();
     }
 
+
     @Override
     public void handleResult(Result rawResult) {
         String data = rawResult.getText().toString();
         String currentDateTimeString = DateFormat.getDateTimeInstance()
                 .format(new Date());
+        MediaPlayer mp = MediaPlayer.create(ScannerfacTry1.this, R.raw.iphone_ding);
+        mp.start();
 
         /*dbref.setValue(currentDateTimeString);--------- "(Direct insertion method)"
         dbref.push().setValue(data)
@@ -86,8 +90,7 @@ public class ScannerfacTry1 extends AppCompatActivity implements ZXingScannerVie
                 dbref.child("atten_"+ getIntent().getStringExtra("sub_go")+"_"+getIntent().getStringExtra("sec_go")).push().setValue(usermap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        MediaPlayer mp = MediaPlayer.create(ScannerfacTry1.this, R.raw.iphone_ding);
-                        mp.start();
+
                         Toast.makeText(ScannerfacTry1.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
                     }
                 });
