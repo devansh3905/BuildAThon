@@ -109,5 +109,6 @@ public class ScannerfacTry1 extends AppCompatActivity implements ZXingScannerVie
         super.onResume();
         scannerView.setResultHandler(this);
         scannerView.startCamera();
+        scannerView.setAutoFocus(true);
     }
 }
