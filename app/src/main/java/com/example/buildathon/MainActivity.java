@@ -63,6 +63,22 @@ public class MainActivity extends AppCompatActivity {
             Intent intent2 = new Intent(this, facultyMain.class);
             startActivity(intent2);
         }
+        else if (userName.equals("10000555") && passWord.equals("10000555")){
+            //------------------------------------------------------------------------------------------
+            b1.setEnabled(false);
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    // This method will be executed once the timer is over
+                    b1.setEnabled(true);
+                }
+            },30000);// set time as per your requirement
+            //------------------------------------------------------------------------------------------
+            Intent intent2 = new Intent(this, facultyMain.class);
+            startActivity(intent2);
+        }
 
         else if (userName.equals("1000015062") && passWord.equals("5062")){
             //------------------------------------------------------------------------------------------
